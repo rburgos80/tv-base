@@ -1,0 +1,51 @@
+.container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 1rem;
+  padding-top: 0;
+  color: white;
+  background-color: #222;
+  border: 1px solid white;
+  border-radius: 4px;
+  box-shadow: 0 0 10px black;
+}
+.showInfo {
+  width: 100%;
+}
+.image {
+  display: block;
+  margin: 1rem auto;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  line-height: 6rem;
+  border-bottom: 1px solid gray;
+}
+
+.summary {
+  margin: 0 auto;
+  max-width: 55rem;
+  font-size: 14pt;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  gap: 2rem;
+}
+
+.years {
+  color: gray;
+}
+
+.ratingMax {
+  color: gray;
+}
+
+.rating {
+  color: yellow;
+}

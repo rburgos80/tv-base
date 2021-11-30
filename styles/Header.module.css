@@ -1,0 +1,45 @@
+.header {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  margin: 0px 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.search {
+  display: flex;
+  height: 2.5rem;
+  width: 40rem;
+}
+
+.searchBar {
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+  padding-left: 0.5rem;
+  width: 95%;
+  border: none;
+  border-radius: 2px 0 0 2px;
+  font-weight: 100;
+  font-size: large;
+}
+
+.searchBtn {
+  background-color: #444;
+  color: white;
+  border: none;
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+}
+
+.navBtn {
+  margin: 0 2rem;
+}
