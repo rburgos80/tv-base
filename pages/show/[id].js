@@ -45,23 +45,25 @@ const ShowPage = () => {
       <div className="container" className={styles.container}>
         <h1 className={styles.title}>{showData.name}</h1>
         <div className={styles.showInfo}>
-          {showData.image ? (
-            <img
-              className={styles.image}
-              src={showData.image.medium}
-              width={210}
-              height={295}
-              alt="TV Show poster"
-            />
-          ) : (
-            <Image
-              src={noSignal}
-              width={208}
-              height={292}
-              className={styles.image}
-              alt="TV Show Poster"
-            />
-          )}
+          <div className={styles.imgContainer}>
+            {showData.image ? (
+              <Image
+                className={styles.image}
+                src={showData.image.medium}
+                width={210}
+                height={295}
+                alt="TV Show poster"
+              />
+            ) : (
+              <Image
+                src={noSignal}
+                width={208}
+                height={292}
+                className={styles.image}
+                alt="TV Show Poster"
+              />
+            )}
+          </div>
           <div className={styles.info}>
             <p className={styles.rating}>
               <FontAwesomeIcon icon={faStar} />{" "}

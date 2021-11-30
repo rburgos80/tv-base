@@ -9,7 +9,13 @@ const EpisodeCard = ({ episode }) => {
     <div className={styles.card}>
       <div>
         {episode.image ? (
-          <img src={episode.image.medium} alt="Episode poster" />
+          <Image
+            src={episode.image.medium}
+            width={250}
+            height={140}
+            layout="fixed"
+            alt="Episode poster"
+          />
         ) : (
           <Image
             src={noSignal}
@@ -30,7 +36,8 @@ const EpisodeCard = ({ episode }) => {
           <FontAwesomeIcon icon={faStar} />
           {episode.rating && episode.rating.average
             ? episode.rating.average
-            : " ?"}{" "}
+            : " ?"}
+          {"  "}
           <span className={styles.ratingMax}>/10</span>
         </p>
         <p className={styles.airdate}>{episode.airdate}</p>
