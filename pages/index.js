@@ -29,19 +29,27 @@ export default function Home({ data }) {
           content="Explore TV shows and view their ratings per season and episode."
         />
       </Head>
-      <div className="lcp">
-        <h1>Welcome to TVBase</h1>
-        <h3>Get information on 50,000+ shows</h3>
-        <Image className="main-image" src={tv} width={600} height={400} />
-      </div>
-      <div className="container">
-        <h1 className="catalog">Catalog</h1>
-        <div className="homeGrid">
-          {data.map((show) => (
-            <ShowCard show={show} key={show.id} />
-          ))}
+      <main>
+        <div className="lcp">
+          <h1>Welcome to TVBase</h1>
+          <h2>Get information on 50,000+ shows</h2>
+          <Image
+            className="main-image"
+            src={tv}
+            width={600}
+            height={400}
+            alt="main image"
+          />
         </div>
-      </div>
+        <div className="container">
+          <h1 className="catalog">Catalog</h1>
+          <div className="homeGrid">
+            {data.map((show) => (
+              <ShowCard show={show} key={show.id} />
+            ))}
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

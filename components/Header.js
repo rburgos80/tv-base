@@ -19,7 +19,7 @@ const Header = () => {
   }
 
   return (
-    <div className={styles.header}>
+    <nav className={styles.header}>
       <Link href="/">
         <a className={styles.logo}>TVbase</a>
       </Link>
@@ -32,7 +32,7 @@ const Header = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           required
         />
-        <button type="submit" className={styles.searchBtn}>
+        <button type="submit" aria-label="search" className={styles.searchBtn}>
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </form>
@@ -44,7 +44,7 @@ const Header = () => {
           <a className={styles.navBtn}>TVbase</a>
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };
 
