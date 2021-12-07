@@ -3,10 +3,11 @@ import Image from "next/image";
 import tv from "../assets/tv.jpg";
 import ShowCard from "../components/ShowCard";
 import api from "./api/shows";
+import axios from "axios";
 
 export async function getStaticProps() {
-  const res = await fetch("https://api.tvmaze.com/shows");
-  const data = await res.json();
+  const res = await axios.get("https://api.tvmaze.com/shows");
+  const data = res.data;
 
   if (!data) {
     return {

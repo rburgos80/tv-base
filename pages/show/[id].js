@@ -7,6 +7,7 @@ import noSignal from "../../assets/no_signal.jpg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const ShowPage = () => {
   const [showData, setShowData] = useState([]);
@@ -14,13 +15,13 @@ const ShowPage = () => {
 
   async function getData() {
     try {
-      const res = await fetch(
+      const res = await axios.get(
         `https://api.tvmaze.com/shows/${router.query.id}`
         // {
         //   mode: "no-cors",
         // }
       );
-      const data = await res.json();
+      const data = res.data;
       setShowData(data);
     } catch {
       throw new Error(

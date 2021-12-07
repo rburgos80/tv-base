@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import EpisodeCard from "./EpisodeCard.js";
 
@@ -8,10 +9,10 @@ const EpisodeList = ({ showId }) => {
 
   const fetchSeasonData = async () => {
     try {
-      const seasonRes = await fetch(
+      const seasonRes = await axios.get(
         `https://api.tvmaze.com/shows/${showId}/seasons`
       );
-      const seasonData = await seasonRes.json();
+      const seasonData = seasonRes.data;
       setSeasons(seasonData);
     } catch (err) {
       throw new Error(
@@ -22,10 +23,10 @@ const EpisodeList = ({ showId }) => {
 
   const fetchEpisodeData = async () => {
     try {
-      const epRes = await fetch(
+      const epRes = await axios.get(
         `https://api.tvmaze.com/seasons/${displaySeason}/episodes`
       );
-      const epData = await epRes.json();
+      const epData = epRes.data;
       setEpisodes(epData);
     } catch (err) {
       throw new Error(

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ShowCard from "../components/ShowCard";
 import api from "./api/shows";
+import axios from "axios";
 
 export default function Results() {
   const router = useRouter();
@@ -14,10 +15,10 @@ export default function Results() {
 
   const fetchSearchResults = async (query) => {
     try {
-      const response = await fetch(
+      const response = await axios.get(
         `https://api.tvmaze.com/search/shows?q=${query}`
       );
-      const data = await response.json();
+      const data = response.data;
       setSearchResults(data);
     } catch (err) {
       console.log(err);
